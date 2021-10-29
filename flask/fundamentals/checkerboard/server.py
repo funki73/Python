@@ -9,7 +9,7 @@ def index1():
 
 @app.route('/<int:num>')
 def index2(num):
-    return render_template('index2.html', times = num)
+    return render_template('index2.html', times = num )
 
 
 if __name__=="__main__":
