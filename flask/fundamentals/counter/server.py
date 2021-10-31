@@ -13,7 +13,7 @@ def counterme():
 
 @app.route('/destroy_session')
 def destroy():
-    # return render_template('/')
+    session.clear()
     return redirect('/')
 
 if __name__=="__main__":
