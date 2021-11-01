@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+h1{
+    color: #d8a614;
+}
+
+.form,
+.returnform{
+    margin-left: 100pt;
+    margin-top: 100pt;
+    background-color: gray;
+    padding: 30px;
+}
+
+.btn{
+    background-color: #d8a614;
+    border: black;
+}

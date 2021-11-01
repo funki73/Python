@@ -10,8 +10,8 @@ def level2(num):
     return render_template('level2.html', times = num)
 
 @app.route('/play/<int:num>/<string:color>')
-def level3(num,color):
-    return render_template('level3.html', num = num, color = color)
+def level3(num, color):
+    return render_template('level3.html', times=num, color=color)
 
 
 

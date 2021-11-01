@@ -11,8 +11,8 @@
     <h1 style="color:black;text-align:center;">Welcome!</h1>
 
     <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-    {% for x in range(0,times,color): %}
-        <div class = "div" style="margin: 10pt; height: 100px; width: 100px; padding: 10px; border: 2px solid black; background-color: #a0c5f8;"></div>
+    {% for x in range(0,times): %}
+        <div class = "div" style="margin: 10pt; height: 100px; width: 100px; padding: 10px; border: 2px solid black; background-color: {{color}};"></div>
     {% endfor %}
             </div>
 
