@@ -33,14 +33,25 @@ def create_sub():
 def display_user(user_id):
     return render_template("user.html", user = User.get_one({"id": user_id}))
 
-def update_form():
-    pass
+@app.route("/users/<int:user_id>/edit")
+def edit_form(user_id):
+    return render_template("edit.html", user = User.get_one({"id": user_id}))
 
-def update_user():
-    pass
+@app.route('/users/<int:user_id>/update', methods=["POST"])
+def update_user(user_id):
+    print (request.form)
+    data={
+        **request.form,
+        "id":user_id
+    }
+    User.update(data)
 
-def delete_user():
-    pass
+    return redirect('/')
+
+@app.route('/users/<int:user_id>/delete')
+def delete_user(user_id):
+    User.delete({"id": user_id})
+
     return redirect('/')
 
 if __name__ == "__main__":

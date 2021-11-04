@@ -9,10 +9,12 @@
     <title>User</title>
 </head>
 <body>
-    <h1>User</h1>
+    <h1>User {{ user.id }}</h1>
     <p>Full Name: {{ user.first_name }} {{ user.last_name }}</p>
     <p>Email: {{ user.email }} </p>
+    <p>Last Update: {{ user.updated_at }} </p>
 
     <a href="/">Home</a>
+    <a href="/users/{{ user.id }}">Edit</a>
 </body>
 </html>
