@@ -9,7 +9,7 @@ def index():
     friends = Friend.get_all()
     print(friends)
     return render_template("index.html", friends=friends)
-            
+    
 
 
 @app.route('/create_friend', methods=["POST"])
