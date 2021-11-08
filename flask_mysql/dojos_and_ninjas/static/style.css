@@ -1,0 +1,13 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.columns{
+    display: flex;
+}
+
+.newdojos,
+.alldojos{
+    padding: 10px;
+}

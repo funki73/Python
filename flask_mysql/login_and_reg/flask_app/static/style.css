@@ -1,0 +1,14 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.registration_login{
+    display: flex;
+}
+
+.registration,
+.login{
+    display: flex;
+    padding: 30px;
+}
