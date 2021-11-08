@@ -1,4 +1,4 @@
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
 
 class Ninja:
     def __init__(self , data ):
@@ -16,7 +16,6 @@ class Ninja:
     
     @classmethod
     def add_ninja( cls, data ):
-        query = "INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id) VALUES (%(first_name)s, %(last_name)s, %(age)s, NOW(), NOW()), default();"
-        results = connectToMySQL('dojos_and_ninjas_schema').query_db(query, data)
+        query = "INSERT INTO ninjas (dojo_id, first_name, last_name, age, created_at, updated_at) VALUES (%(dojo_id)s, %(first_name)s, %(last_name)s, %(age)s, NOW(), NOW());"
 
-        return results
+        return connectToMySQL('dojos_and_ninjas_schema').query_db(query, data)
