@@ -1,11 +1,12 @@
 import re
+from types import MethodDescriptorType
 from flask import render_template, redirect, request, session
 from flask_bcrypt import Bcrypt
 
 from flask_app import app
 from flask_app.models.users import User
 
-becrypt = Bcrypt(app)
+bcrypt = Bcrypt(app)
 
 @app.route("/")
 def index():
@@ -30,6 +31,23 @@ def register():
     return redirect("/dashboard")
 
 
+@app.route("/login", methods = ["POST"])
+def login():
+    if not User.login_validator(request.form):
+        return redirect ("/")
+
+    user = User.get_by_email({"email": request.form["email"]})
+
+    session["uuid"] = user.id
+
+    return redirect ("/dashboard")
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+
+    return redirect("/")
 
 @app.route("/dashboard")
 def dashboard():
