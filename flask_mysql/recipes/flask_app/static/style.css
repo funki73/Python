@@ -1,0 +1,26 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    width: 900px;
+}
+
+.column {
+    display: flex;
+    padding: 20px;
+}
+
+.register,
+.login {
+    display: flex;
+}
+
+.login {
+    margin-left: 65px;
+}
+
+/* .btn{
+    padding: 10px;
+} */
