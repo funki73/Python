@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add New Recipe</h1>
+    <div class="d-flex justify-content-around">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="main">
+        <form action="/recipes/create" method="post">
+            <p>
+                Name:
+                <input type="text" name="name" id="">
+            </p>
+            <p>
+                Description:
+                <input type="text" name="description" id="">
+            </p>
+            <p>
+                Instructions:
+                <input type="text" name="instructions" id="">
+            </p>
+            <p>
+                Date Made On:
+                <input type="date" name="instructions" id="">
+            </p>
+            <p>
+                Under 30 min?
+                <input type="radio" name="instructions" id="">
+            </p>
+            <button>Create</button>
+
+        </form>
+
+    </div>
+</body>
+</html>
