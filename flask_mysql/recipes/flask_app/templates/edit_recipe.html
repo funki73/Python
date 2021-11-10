@@ -7,28 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Add New Recipe</h1>
+    <h1>Edit Recipe</h1>
     <div class="d-flex justify-content-around">
         <a href="/dashboard">Dashboard</a>
         <a href="/logout">Logout</a>
     </div>
     <div class="main">
-        <form action="/recipes/created" method="post">
+        <form action="/recipes/{{ recipe.id }}/edit " method="post">
             <p>
                 Name:
-                <input type="text" name="name" id="">
+                <input type="text" name="name" id="" value="{{ recipe.name }}">
             </p>
             <p>
                 Description:
-                <input type="text" name="description" id="">
+                <input type="text" name="description" id="" value="{{ recipe.description }}">
             </p>
             <p>
                 Instructions:
-                <input type="text" name="instructions" id="">
+                <input type="text" name="instructions" id="" value="{{ recipe.instructions }}">
             </p>
             <p>
                 Date Made On:
-                <input type="date" name="date_made" id="">
+                <input type="date" name="date_made" id="" value="{{ recipe.date_made }}">
             </p>
             <p>
                 <p>Under 30 min?</p>
@@ -37,7 +37,7 @@
                 <input type="radio" name="under_thirty" id="">
                 <label for="html">No</label><br>
             </p>
-            <button>Create</button>
+            <button>Update</button>
         </form>
         {% with messages = get_flashed_messages() %}
             {% if messages %}

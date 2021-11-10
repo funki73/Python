@@ -32,9 +32,9 @@
                     <td>{{ recipe.under_thirty }}</td>
                     <td class="d-flex justify-content-around">
                         <a href="/recipes/{{ recipe.id }}">View</a>
-                        {% if logged_in_user.id == truck.user.id %}
-                            <a href="/recipes/{{ recipe.id }}">Edit</a>
-                            <a href="/recipes/{{ recipe.id }}">Delete</a>
+                        {% if logged_in_user.id == recipe.user.id %}
+                            <a href="/recipes/{{ recipe.id }}/edit">Edit</a>
+                            <a href="/recipes/{{ recipe.id }}/delete">Delete</a>
                         {% endif %}
                     </td>
                 </tr>

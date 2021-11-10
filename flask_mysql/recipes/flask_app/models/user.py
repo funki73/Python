@@ -28,7 +28,7 @@ class User:
     @classmethod
     def get_all(cls, data):
         query = "SELECT * FROM users;"
-        results = connectToMySQL("users_schema").query_db(query, data)
+        results = connectToMySQL("recipes").query_db(query, data)
 
         users = []
         for row in results:
@@ -40,7 +40,7 @@ class User:
     @classmethod
     def get_by_email(cls, data):
         query = "SELECT * FROM users WHERE email = %(email)s;"
-        results = connectToMySQL("users_schema").query_db(query, data)
+        results = connectToMySQL("recipes").query_db(query, data)
 
         if len(results) < 1:
             return False
@@ -51,7 +51,7 @@ class User:
     @classmethod
     def get_by_id(cls, data):
         query = "SELECT * FROM users WHERE id = %(id)s;"
-        results = connectToMySQL("users_schema").query_db(query, data)
+        results = connectToMySQL("recipes").query_db(query, data)
 
         if len(results) < 1:
             return False
@@ -63,7 +63,7 @@ class User:
     def create(cls, data):
         query = "INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s, NOW(), NOW())"
 
-        return connectToMySQL("users_schema").query_db(query, data)
+        return connectToMySQL("recipes").query_db(query, data)
 
 
     @staticmethod
