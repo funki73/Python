@@ -1,16 +1,24 @@
-import re
-from types import MethodDescriptorType
+
 from flask import render_template, redirect, request, session
-from flask_bcrypt import Bcrypt
 
 from flask_app import app
-from flask_app.models.users import User
+
+from flask_app.models.user import User
+
+from types import MethodDescriptorType
+import re
+from flask_bcrypt import Bcrypt
+
 
 bcrypt = Bcrypt(app)
 
 @app.route("/")
 def index():
+    if "uuid" in session:
+        return redirect("dashboard") #change redirect is name is different then dashbard
+
     return render_template("index.html")
+
 
 
 @app.route("/register", methods = ["POST"])
@@ -49,6 +57,3 @@ def logout():
 
     return redirect("/")
 
-@app.route("/dashboard")
-def dashboard():
-    return render_template("dashboard.html", user = User.get_by_id({"id": session['uuid']}))

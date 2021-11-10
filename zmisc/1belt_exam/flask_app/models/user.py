@@ -6,7 +6,7 @@ from flask_bcrypt import Bcrypt
 
 from flask_app import app
 
-from flask_app.config.mysqlconnection import connectToMySQL
+# from flask_app.config.mysqlconnection import connectToMySQL
 
 bcrypt = Bcrypt (app)
 
@@ -20,6 +20,7 @@ class User:
         self.password = data ['password']
         self.created_at = data ['created_at']
         self.udpated_at = data ['updated_at']
+        # self.name_of_other table = [] Need to be updated
 
     @classmethod
     def get_all(cls, data):
