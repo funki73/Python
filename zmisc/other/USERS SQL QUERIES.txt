@@ -1,0 +1,18 @@
+INSERT INTO users (first_name, last_name, email, created_at, updated_at)
+VALUES('John', 'Doe', 'jdoe@mail.com' , NOW(), NOW()),
+('Randy', 'C', 'jdoe@mail.com' , NOW(), NOW()),
+('Joe', 'Mama', 'jdoe@mail.com' , NOW(), NOW());
+
+SELECT * FROM users;
+
+SELECT EMAIL FROM USERS WHERE ID = 1;
+
+DELETE FROM users WHERE ID < 10;
+
+SELECT ID, first_name FROM USERS WHERE ID = 13;
+
+UPDATE users SET last_name = 'Pancakes' WHERE id = 10;
+
+DELETE FROM users WHERE ID = 13;
+
+SELECT * FROM users order by first_name ASC;

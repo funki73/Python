@@ -4,6 +4,7 @@ from flask import render_template, redirect, request, session
 from flask_app import app
 
 from flask_app.models.user import User
+from flask_app.models.tv_show import Tv_shows
 
 from types import MethodDescriptorType
 import re
@@ -15,7 +16,7 @@ bcrypt = Bcrypt(app)
 @app.route("/")
 def index():
     if "uuid" in session:
-        return redirect("dashboard") #change redirect is name is different then dashbard
+        return redirect("dashboard")
 
     return render_template("index.html")
 
